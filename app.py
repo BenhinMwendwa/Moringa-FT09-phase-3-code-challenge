@@ -39,8 +39,8 @@ def main():
 
     conn.commit()
 
-    # Query the database for inserted records. 
-    # The following fetch functionality should probably be in their respective models
+
+
 
     cursor.execute('SELECT * FROM magazines')
     magazines = cursor.fetchall()
@@ -54,15 +54,15 @@ def main():
     conn.close()
 
     # Display results
-    print("\nMagazines:")
+    print("Magazines:")
     for magazine in magazines:
         print(Magazine(magazine["id"], magazine["name"], magazine["category"]))
 
-    print("\nAuthors:")
+    print("Authors:")
     for author in authors:
         print(Author(author["id"], author["name"]))
 
-    print("\nArticles:")
+    print("Articles:")
     for article in articles:
         print(Article(article["id"], article["title"], article["content"], article["author_id"], article["magazine_id"]))
 
